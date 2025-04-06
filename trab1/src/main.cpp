@@ -42,44 +42,44 @@ int ordem[] = {3, 2, 1, 4};
 int screenWidth = 1500, screenHeight = 700;
 
 inline void change(Bmp *teste)
-    {
-          teste = new Bmp(".\\__LAB2\\images\\img3.bmp");
-           teste->convertBGRtoRGB();
-           teste->data = teste->getImage();
-         teste->positionX = (screenWidth - teste->width)/2;
-           teste->positionY = (screenHeight - teste->height)/2;
-        }
+{
+	teste = new Bmp(".\\__LAB2\\images\\img3.bmp");
+	teste->convertBGRtoRGB();
+	teste->data = teste->getImage();
+	teste->positionX = (screenWidth - teste->width) / 2;
+	teste->positionY = (screenHeight - teste->height) / 2;
+}
 
 
 
 void renderiza(Bmp *teste)
 {
-    teste->render();
+	teste->render();
 
 }
 
 void renderizaFlippedH(Bmp *teste)
 {
-    teste->renderFlippedH();
+	teste->renderFlippedH();
 
 }
 void renderizaFlippedV(Bmp *teste)
 {
-    teste->renderFlippedV();
+	teste->renderFlippedV();
 
 }
 void renderizaFlippedHV(Bmp *teste)
 {
-    teste->renderFlippedHV();
+	teste->renderFlippedHV();
 
 }
 
 void movimenta(Bmp *teste, int d)
 {
-    if(d == 200)  teste->positionX -= 60;
-    if(d == 201)  teste->positionY += 60;
-    if(d == 203)  teste->positionY -= 60;
-    if(d == 202)  teste->positionX += 60;
+	if(d == 200)  teste->positionX -= 60;
+	if(d == 201)  teste->positionY += 60;
+	if(d == 203)  teste->positionY -= 60;
+	if(d == 202)  teste->positionX += 60;
 
 
 }
@@ -87,154 +87,166 @@ void movimenta(Bmp *teste, int d)
 
 void render()
 {
-    cb->render();
-    if(a == 1)
-        {
-            CV::text(1250, 600, "teste");
-        }
+	cb->render();
+	if(a == 1)
+	{
+		CV::text(1250, 600, "teste");
+	}
 
-    bt->render();
-
-
-    for(int i = tam-1; i >= 0; i--)
-    {
-        if(ordem[i] == 1 && cb->ativa == true)   renderizaFlippedHV(img1);
-        if(ordem[i] == 2)   renderiza(img2);
-        if(ordem[i] == 3)   renderizaFlippedHV(img3);
-        if(ordem[i] == 4)   renderiza(img4);
-    }
-
-    pcam->render();
+	bt->render();
 
 
-    //img1->render();
-   // if(exibition == 2)  img2 ->render();
-    //teste->render(posX, posY);
+	for(int i = tam - 1; i >= 0; i--)
+	{
+		if(ordem[i] == 1 && cb->ativa == true)   renderizaFlippedHV(img1);
+		if(ordem[i] == 2)   renderiza(img2);
+		if(ordem[i] == 3)   renderizaFlippedHV(img3);
+		if(ordem[i] == 4)   renderiza(img4);
+	}
+
+	pcam->render();
+
+
+	//img1->render();
+	// if(exibition == 2)  img2 ->render();
+	//teste->render(posX, posY);
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
 void keyboard(int key)
 {
 
-    if(key == 200)
-    switch(ordem[0])
-    {
-    case 1:
-         movimenta(img1, 200);
-         break;
-    case 2:
-         movimenta(img2, 200);
-         break;
-    case 3:
-         movimenta(img3, 200);
-         break;
-    case 4:
-         movimenta(img4, 200);
-         break;
-    }
+	if(key == 200)
+		switch(ordem[0])
+		{
+		case 1:
+			movimenta(img1, 200);
+			break;
+		case 2:
+			movimenta(img2, 200);
+			break;
+		case 3:
+			movimenta(img3, 200);
+			break;
+		case 4:
+			movimenta(img4, 200);
+			break;
+		}
 
-    if(key == 201)
+	if(key == 201)
 
-         switch(ordem[0])
-    {
-    case 1:
-         movimenta(img1, 201);
-         break;
-    case 2:
-         movimenta(img2, 201);
-         break;
-    case 3:
-         movimenta(img3, 201);
-         break;
-    case 4:
-         movimenta(img4, 201);
-         break;
-    }
+		switch(ordem[0])
+		{
+		case 1:
+			movimenta(img1, 201);
+			break;
+		case 2:
+			movimenta(img2, 201);
+			break;
+		case 3:
+			movimenta(img3, 201);
+			break;
+		case 4:
+			movimenta(img4, 201);
+			break;
+		}
 
-    if(key == 203)
-         switch(ordem[0])
-    {
-    case 1:
-         movimenta(img1, 203);
-         break;
-    case 2:
-         movimenta(img2, 203);
-         break;
-    case 3:
-         movimenta(img3, 203);
-         break;
-    case 4:
-         movimenta(img4, 203);
-         break;
-    }
-    if(key == 202)
-         switch(ordem[0])
-    {
-    case 1:
-         movimenta(img1, 202);
-         break;
-    case 2:
-         movimenta(img2, 202);
-         break;
-    case 3:
-         movimenta(img3, 202);
-         break;
-    case 4:
-         movimenta(img4, 202);
-         break;
-    }
-
-
-
-  /*  if(key == 200)  img1->positionX -= 60;
-    if(key == 201)  img1->positionY += 60;
-    if(key == 203)  img1->positionY -= 60;
-    if(key == 202)  img1->positionX += 60;*/
-
-    printf("%d ", key);
+	if(key == 203)
+		switch(ordem[0])
+		{
+		case 1:
+			movimenta(img1, 203);
+			break;
+		case 2:
+			movimenta(img2, 203);
+			break;
+		case 3:
+			movimenta(img3, 203);
+			break;
+		case 4:
+			movimenta(img4, 203);
+			break;
+		}
+	if(key == 202)
+		switch(ordem[0])
+		{
+		case 1:
+			movimenta(img1, 202);
+			break;
+		case 2:
+			movimenta(img2, 202);
+			break;
+		case 3:
+			movimenta(img3, 202);
+			break;
+		case 4:
+			movimenta(img4, 202);
+			break;
+		}
 
 
 
-    if(key == 49)
-        {
-            for(int q = 0; q < tam; q++) if(ordem[q] == 1)  {ordem[q] = ordem[0];}
-            ordem[0] = 1;
-          /* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
-           img1->convertBGRtoRGB();
-           data = img1->getImage();
-           img1->positionX = (screenWidth - img1->width)/2;
-            img1->positionY = (screenHeight - img1->height)/2; */
-        }
-    if(key == 50)
-        {
-            for(int q = 0; q < tam; q++) if(ordem[q] == 2)  {ordem[q] = ordem[0];}
-            ordem[0] = 2;
+	/*  if(key == 200)  img1->positionX -= 60;
+	  if(key == 201)  img1->positionY += 60;
+	  if(key == 203)  img1->positionY -= 60;
+	  if(key == 202)  img1->positionX += 60;*/
+
+	printf("%d ", key);
 
 
-         /* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
-           img1->convertBGRtoRGB();
-           data = img1->getImage();
-           img1->positionX = (screenWidth - img1->width)/2;
-           img1->positionY = (screenHeight - img1->height)/2;*/
 
-        }
+	if(key == 49)
+	{
+		for(int q = 0; q < tam; q++) if(ordem[q] == 1)
+			{
+				ordem[q] = ordem[0];
+			}
+		ordem[0] = 1;
+		/* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
+		 img1->convertBGRtoRGB();
+		 data = img1->getImage();
+		 img1->positionX = (screenWidth - img1->width)/2;
+		  img1->positionY = (screenHeight - img1->height)/2; */
+	}
+	if(key == 50)
+	{
+		for(int q = 0; q < tam; q++) if(ordem[q] == 2)
+			{
+				ordem[q] = ordem[0];
+			}
+		ordem[0] = 2;
 
-    if(key == 51)
-        {
-          for(int q = 0; q < tam; q++) if(ordem[q] == 3)  {ordem[q] = ordem[0];}
-            ordem[0] = 3;
-         /* img1 = new Bmp(".\\__LAB2\\images\\img3.bmp");
-           img1->convertBGRtoRGB();
-           data = img1->getImage();
-         img1->positionX = (screenWidth - img1->width)/2;
-           img1->positionY = (screenHeight - img1->height)/2;*/
-        }
-    if(key == 52)
-        {
-            for(int q = 0; q < tam; q++) if(ordem[q] == 4)  {ordem[q] = ordem[0];}
-            ordem[0] = 4;
-        }
-    if(key == 32) img3->brilho += 0.1;
+
+		/* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
+		  img1->convertBGRtoRGB();
+		  data = img1->getImage();
+		  img1->positionX = (screenWidth - img1->width)/2;
+		  img1->positionY = (screenHeight - img1->height)/2;*/
+
+	}
+
+	if(key == 51)
+	{
+		for(int q = 0; q < tam; q++) if(ordem[q] == 3)
+			{
+				ordem[q] = ordem[0];
+			}
+		ordem[0] = 3;
+		/* img1 = new Bmp(".\\__LAB2\\images\\img3.bmp");
+		  img1->convertBGRtoRGB();
+		  data = img1->getImage();
+		img1->positionX = (screenWidth - img1->width)/2;
+		  img1->positionY = (screenHeight - img1->height)/2;*/
+	}
+	if(key == 52)
+	{
+		for(int q = 0; q < tam; q++) if(ordem[q] == 4)
+			{
+				ordem[q] = ordem[0];
+			}
+		ordem[0] = 4;
+	}
+	if(key == 32) img3->brilho += 0.1;
 
 
 }
@@ -248,55 +260,55 @@ void keyboardUp(int key)
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-   mouseX = x;
-   mouseY = y;
+	mouseX = x;
+	mouseY = y;
 
-   if( state == 0 ) //clicou
-   {
-       if( cb->Colidiu(x, y) ) cb->CheckBox::toggle(cb);
+	if( state == 0 ) //clicou
+	{
+		if( cb->Colidiu(x, y) ) cb->CheckBox::toggle(cb);
 
-   }
+	}
 
 
 }
 
 int main(void)
 {
-    bt = new Botao(1200, 650, 100, 50, "botao");
+	bt = new Botao(1200, 650, 100, 50, "botao");
 
-    cb = new CheckBox(1200, 500, 50);
-    cb->ativa = false;
+	cb = new CheckBox(1200, 500, 50);
+	cb->ativa = false;
 
-   img1 = new Bmp(".\\trab1\\images\\img1.bmp");
-   img1->convertBGRtoRGB();
-   img1->positionX = (screenWidth - 200 - img1->width)/2; //Define a posicao inicial de img1
-   img1->positionY = (screenHeight - img1->height)/2;
+	img1 = new Bmp(".\\trab1\\images\\img1.bmp");
+	img1->convertBGRtoRGB();
+	img1->positionX = (screenWidth - 200 - img1->width) / 2; //Define a posicao inicial de img1
+	img1->positionY = (screenHeight - img1->height) / 2;
 
-   img2 = new Bmp(".\\trab1\\images\\img2.bmp");
-   img2->convertBGRtoRGB();
-   img2->positionX = (screenWidth - img2->width)/2;
-   img2->positionY = (screenHeight - img2->height)/2;
+	img2 = new Bmp(".\\trab1\\images\\img2.bmp");
+	img2->convertBGRtoRGB();
+	img2->positionX = (screenWidth - img2->width) / 2;
+	img2->positionY = (screenHeight - img2->height) / 2;
 
-    img3 = new Bmp(".\\trab1\\images\\img3.bmp");
-   img3->convertBGRtoRGB();
-   img3->positionX = (screenWidth - img3->width)/2;
-   img3->positionY = (screenHeight - img3->height)/2;
+	img3 = new Bmp(".\\trab1\\images\\img3.bmp");
+	img3->convertBGRtoRGB();
+	img3->positionX = (screenWidth - img3->width) / 2;
+	img3->positionY = (screenHeight - img3->height) / 2;
 
-    img4 = new Bmp(".\\trab1\\images\\img4.bmp");
-   img4->convertBGRtoRGB();
-   img4->positionX = (screenWidth - img4->width)/2;
-   img4->positionY = (screenHeight - img4->height)/2;
-
-
-    pcam = new PainelDeCamadas(1300, 0, 200, 200, 4);
-
-    img4->brilho = 0;
+	img4 = new Bmp(".\\trab1\\images\\img4.bmp");
+	img4->convertBGRtoRGB();
+	img4->positionX = (screenWidth - img4->width) / 2;
+	img4->positionY = (screenHeight - img4->height) / 2;
 
 
+	pcam = new PainelDeCamadas(1300, 0, 200, 200, 4);
 
-    // data = img1->getImage();
+	img4->brilho = 0;
 
 
-   CV::init(&screenWidth, &screenHeight, "imagem");
-   CV::run();
+
+	// data = img1->getImage();
+
+
+	CV::init(&screenWidth, &screenHeight, "imagem");
+	CV::run();
 }
