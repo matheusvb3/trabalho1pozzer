@@ -88,6 +88,17 @@ void movimenta(Bmp *teste, int d)
 
 void render()
 {
+    int tamQuadrado = 8;
+    for (int linha = 0; linha < screenWidth; linha++)
+    {
+        for (int coluna = 0; coluna < screenHeight; coluna++)
+        {
+            ((linha + coluna) % 2 == 0) ? CV::color(13) : CV::color(1);
+            CV::rectFill(coluna * tamQuadrado, linha * tamQuadrado,
+                         coluna * tamQuadrado + tamQuadrado, linha * tamQuadrado + tamQuadrado);
+        }
+    }
+
 	cb->render();
 	if(a == 1)
 	{
