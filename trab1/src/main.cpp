@@ -88,14 +88,14 @@ void movimenta(Bmp *teste, int d)
 
 void render()
 {
-    int tamQuadrado = 8;
-    for (int linha = 0; linha < screenWidth; linha++)
+    int tamQuadriculado = 8;
+    for (int linha = 0; linha < screenHeight / (tamQuadriculado - 1); linha++)
     {
-        for (int coluna = 0; coluna < screenHeight; coluna++)
+        for (int coluna = 0; coluna < screenWidth / (tamQuadriculado - 1); coluna++)
         {
             ((linha + coluna) % 2 == 0) ? CV::color(13) : CV::color(1);
-            CV::rectFill(coluna * tamQuadrado, linha * tamQuadrado,
-                         coluna * tamQuadrado + tamQuadrado, linha * tamQuadrado + tamQuadrado);
+            CV::rectFill(coluna * tamQuadriculado, linha * tamQuadriculado,
+                         coluna * tamQuadriculado + tamQuadriculado, linha * tamQuadriculado + tamQuadriculado);
         }
     }
 
