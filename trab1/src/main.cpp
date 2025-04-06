@@ -1,4 +1,3 @@
-
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h> //callback da wheel do mouse.
 
@@ -10,12 +9,7 @@
 #include "bmp.h"
 #include "Botao.h"
 #include "Checkbox.h"
-
-
-Bmp *img1 = NULL; //1
-Bmp *img2 = NULL;
-Bmp *img3;
-Bmp *img4;
+#include "Camada.h"
 
 int mouseX, mouseY;
 
@@ -23,6 +17,7 @@ PainelDeCamadas *pcam;
 
 int largPainelUsuario = 200;
 
+Camada camadas;
 
 Botao *bt;
 
@@ -34,11 +29,6 @@ int a = 0;
 
 int tam = 4;
 int ordem[] = {3, 2, 1, 4};
-
-
-
-
-
 
 
 //largura e altura inicial da tela . Alteram com o redimensionamento de tela.
@@ -112,13 +102,7 @@ void render()
 	bt->render();
 
 
-	for(int i = tam - 1; i >= 0; i--)
-	{
-		if(ordem[i] == 1 && cb->ativa == true)   renderizaFlippedHV(img1);
-		if(ordem[i] == 2)   renderiza(img2);
-		if(ordem[i] == 3)   renderizaFlippedHV(img3);
-		if(ordem[i] == 4)   renderiza(img4);
-	}
+	camadas.render();
 
 	pcam->render();
 
@@ -132,7 +116,7 @@ void render()
 void keyboard(int key)
 {
 
-	if(key == 200)
+	/*if(key == 200)
 		switch(ordem[0])
 		{
 		case 1:
@@ -198,7 +182,7 @@ void keyboard(int key)
 		case 4:
 			movimenta(img4, 202);
 			break;
-		}
+		}*/
 
 
 
@@ -262,7 +246,7 @@ void keyboard(int key)
 			}
 		ordem[0] = 4;
 	}
-	if(key == 32) img3->brilho += 0.1;
+//	if(key == 32) img3->brilho += 0.1;
 
 
 }
@@ -295,35 +279,23 @@ int main(void)
 	cb = new CheckBox(1200, 500, 50);
 	cb->ativa = false;
 
-	img1 = new Bmp(".\\trab1\\images\\a.bmp");
-	img1->convertBGRtoRGB();
-	img1->positionX = (screenWidth - 200 - img1->width) / 2; //Define a posicao inicial de img1
-	img1->positionY = (screenHeight - img1->height) / 2;
+    auto img1 = std::make_shared<Bmp>(".\\trab1\\images\\a.bmp");
+    img1->convertBGRtoRGB();
+    camadas.adiciona(img1);
 
-	img2 = new Bmp(".\\trab1\\images\\b.bmp");
-	img2->convertBGRtoRGB();
-	img2->positionX = (screenWidth - img2->width) / 2;
-	img2->positionY = (screenHeight - img2->height) / 2;
+    auto img2 = std::make_shared<Bmp>(".\\trab1\\images\\b.bmp");
+    img2->convertBGRtoRGB();
+    camadas.adiciona(img2);
 
-	img3 = new Bmp(".\\trab1\\images\\c.bmp");
-	img3->convertBGRtoRGB();
-	img3->positionX = (screenWidth - img3->width) / 2;
-	img3->positionY = (screenHeight - img3->height) / 2;
+    auto img3 = std::make_shared<Bmp>(".\\trab1\\images\\c.bmp");
+    img3->convertBGRtoRGB();
+    camadas.adiciona(img3);
 
-	img4 = new Bmp(".\\trab1\\images\\d.bmp");
-	img4->convertBGRtoRGB();
-	img4->positionX = (screenWidth - img4->width) / 2;
-	img4->positionY = (screenHeight - img4->height) / 2;
-
+    auto img4 = std::make_shared<Bmp>(".\\trab1\\images\\d.bmp");
+    img4->convertBGRtoRGB();
+    camadas.adiciona(img4);
 
 	pcam = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight, 4);
-
-	img4->brilho = 0;
-
-
-
-	// data = img1->getImage();
-
 
 	CV::init(&screenWidth, &screenHeight, "Manipulador de imagem");
 	CV::run();
