@@ -1,18 +1,20 @@
 #include "Botao.h"
 #include <string.h>
 
-Botao::Botao(int x, int y, int largura, int altura, const char *texto) {
+Botao::Botao(int x, int y, int larg, int alt, const char *label)
+{
     this->x = x;
     this->y = y;
-    this->largura = largura;
-    this->altura = altura;
-    this->texto = new char[strlen(texto) + 1];
-    strcpy(this->texto, texto);
+    this->larg = larg;
+    this->alt = alt;
+    this->label = new char[strlen(label) + 1];
+    strcpy(this->label, label);
 }
 
-void Botao::render() {
+void Botao::render()
+{
     CV::color(0.7, 0.7, 0.7);
-    CV::rectFill(x, y, x + largura, y + altura);
+    CV::rectFill(x, y, x + larg, y + alt);
     CV::color(0, 0, 0);
-    CV::text(x + 10, y + altura / 2, texto);
+    CV::text(x + 10, y + alt / 2, label);
 }

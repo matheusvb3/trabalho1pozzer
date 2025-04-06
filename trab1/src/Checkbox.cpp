@@ -1,13 +1,15 @@
 #include "CheckBox.h"
 
-CheckBox::CheckBox(float _x, float _y, float _lado) {
+CheckBox::CheckBox(float _x, float _y, float _lado)
+{
     lado = _lado;
     x = _x;
     y = _y;
-    ativa = false;  // Inicialmente desativada
+    ativa = false;
 }
 
-void CheckBox::toggle() {
+void CheckBox::toggle()
+{
     if (ativa)
     {
         !ativa;
@@ -18,7 +20,8 @@ void CheckBox::toggle() {
     }
 }
 
-void CheckBox::render() {
+void CheckBox::render()
+{
     CV::color(0, 0, 1);
     CV::rectFill(x, y, x + lado, y + lado);
 
@@ -32,6 +35,7 @@ void CheckBox::render() {
     }
 }
 
-bool CheckBox::Colidiu(int mx, int my) {
+bool CheckBox::Colidiu(int mx, int my)
+{
     return (mx >= x && mx <= (x + lado) && my >= y && my <= (y + lado));
 }
