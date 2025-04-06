@@ -21,6 +21,8 @@ int mouseX, mouseY;
 
 PainelDeCamadas *pcam;
 
+int largPainelUsuario = 200;
+
 
 Botao *bt;
 
@@ -88,16 +90,18 @@ void movimenta(Bmp *teste, int d)
 
 void render()
 {
+    CV::translate(largPainelUsuario, 0);
     int tamQuadriculado = 8;
     for (int linha = 0; linha < screenHeight / (tamQuadriculado - 1); linha++)
     {
-        for (int coluna = 0; coluna < screenWidth / (tamQuadriculado - 1); coluna++)
+        for (int coluna = 0; coluna < screenWidth / tamQuadriculado; coluna++)
         {
             ((linha + coluna) % 2 == 0) ? CV::color(13) : CV::color(1);
             CV::rectFill(coluna * tamQuadriculado, linha * tamQuadriculado,
                          coluna * tamQuadriculado + tamQuadriculado, linha * tamQuadriculado + tamQuadriculado);
         }
     }
+    CV::translate(0, 0);
 
 	cb->render();
 	if(a == 1)
@@ -312,7 +316,7 @@ int main(void)
 	img4->positionY = (screenHeight - img4->height) / 2;
 
 
-	pcam = new PainelDeCamadas(1300, 0, 200, 200, 4);
+	pcam = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight, 4);
 
 	img4->brilho = 0;
 
@@ -321,6 +325,6 @@ int main(void)
 	// data = img1->getImage();
 
 
-	CV::init(&screenWidth, &screenHeight, "imagem");
+	CV::init(&screenWidth, &screenHeight, "Manipulador de imagem");
 	CV::run();
 }
