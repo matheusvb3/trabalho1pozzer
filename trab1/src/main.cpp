@@ -8,6 +8,7 @@
 
 #include "gl_canvas2d.h"
 #include "bmp.h"
+#include "Botao.h"
 
 
 Bmp *img1 = NULL; //1
