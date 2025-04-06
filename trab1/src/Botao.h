@@ -5,10 +5,10 @@
 
 class Botao {
 public:
-    int x, y, largura, altura;
-    char *texto;
+    int x, y, larg, alt;
+    char *label;
 
-    Botao(int x, int y, int largura, int altura, const char *texto);
+    Botao(int x, int y, int larg, int alt, const char *label);
     void render();
 };
 
