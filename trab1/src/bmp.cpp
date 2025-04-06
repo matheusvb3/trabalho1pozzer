@@ -153,12 +153,6 @@ void Bmp::renderFlippedHV()
 	}
 }
 
-void CheckBox::toggle(CheckBox *cb)
-{
-	if(cb->ativa == true) cb->ativa = false;
-	else cb->ativa = true;
-}
-
 
 
 void Bmp::load(const char *fileName)

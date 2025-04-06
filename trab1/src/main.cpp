@@ -9,6 +9,7 @@
 #include "gl_canvas2d.h"
 #include "bmp.h"
 #include "Botao.h"
+#include "Checkbox.h"
 
 
 Bmp *img1 = NULL; //1
@@ -265,7 +266,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 	if( state == 0 ) //clicou
 	{
-		if( cb->Colidiu(x, y) ) cb->CheckBox::toggle(cb);
+		if( cb->Colidiu(x, y) ) cb->toggle();
 
 	}
 

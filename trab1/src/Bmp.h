@@ -77,56 +77,6 @@ public:
 
 };
 
-class CheckBox
-{
-	float lado, x, y;  //CheckBox será quadrada
-
-
-public:
-
-	bool ativa;
-	CheckBox(float _x, float _y, float _lado)
-	{
-		lado  = _lado;
-		x = _x;
-		y = _y;
-	}
-
-	void toggle(CheckBox *cb);
-
-	void render()
-	{
-		CV::color(0, 0, 1);
-		CV::rectFill(x, y, x + lado, y + lado);
-
-		//Controla o display de estado
-		if(ativa == true)
-		{
-			CV::color(1, 0.647, 0);
-			CV::rectFill(x + (lado * 0.1), y + (lado * 0.1), x + lado - (lado * 0.1), y + lado - (lado * 0.1));
-			CV::color(0, 0, 0);
-		}
-		else
-		{
-			CV::color(1, 1, 1);
-			CV::rectFill(x + (lado * 0.1), y + (lado * 0.1), x + lado - (lado * 0.1), y + lado - (lado * 0.1));
-		}
-	}
-
-
-	//recebe as coordenadas do mouse para tratar clique ou detectar quando o mouse esta em cima do botao
-	bool Colidiu(int mx, int my)
-	{
-		if( mx >= x && mx <= (x + lado) && my >= y && my <= (y + lado) )
-		{
-			return true;
-		}
-		return false;
-	}
-
-
-};
-
 class PainelDeCamadas
 {
 public:
