@@ -10,10 +10,11 @@
 #include "Botao.h"
 #include "Checkbox.h"
 #include "Camada.h"
+#include "PainelDeCamadas.h"
 
 int mouseX, mouseY;
 
-PainelDeCamadas *pcam;
+PainelDeCamadas *painelCamadas;
 
 int largPainelUsuario = 200;
 
@@ -104,7 +105,7 @@ void render()
 
 	camadas.render();
 
-	pcam->render();
+	painelCamadas->render();
 
 
 	//img1->render();
@@ -260,14 +261,24 @@ void keyboardUp(int key)
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-	mouseX = x;
-	mouseY = y;
+    //mouseX = x;
+    //mouseY = y;
 
-	if( state == 0 ) //clicou
-	{
-		if( cb->Colidiu(x, y) ) cb->toggle();
+    if (state == 0) { // Clique do mouse
+        if (cb->Colidiu(x, y)) cb->toggle();
 
-	}
+        if (painelCamadas->btCima->Colidiu(x, y)) {
+            painelCamadas->moverParaCima();
+        }
+
+        if (painelCamadas->btBaixo->Colidiu(x, y)) {
+            painelCamadas->moverParaBaixo();
+        }
+
+        // Detecta se clicou em alguma camada e a seleciona
+        int camadaSelecionada = (y - 20) / 50;
+        painelCamadas->selecionar(camadaSelecionada);
+    }
 
 
 }
@@ -295,7 +306,12 @@ int main(void)
     img4->convertBGRtoRGB();
     camadas.adiciona(img4);
 
-	pcam = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight, 4);
+	painelCamadas = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight);
+
+	painelCamadas->adiciona(img1);
+    painelCamadas->adiciona(img2);
+    painelCamadas->adiciona(img3);
+    painelCamadas->adiciona(img4);
 
 	CV::init(&screenWidth, &screenHeight, "Manipulador de imagem");
 	CV::run();

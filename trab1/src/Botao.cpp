@@ -18,3 +18,8 @@ void Botao::render()
     CV::color(0, 0, 0);
     CV::text(x + 10, y + alt / 2, label);
 }
+
+bool Botao::Colidiu(int mouseX, int mouseY)
+{
+    return (mouseX >= x && mouseX <= x + larg && mouseY >= y && mouseY <= y + alt);
+}

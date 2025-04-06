@@ -35,6 +35,8 @@
 		<Unit filename="src/Bmp.h" />
 		<Unit filename="src/Botao.cpp" />
 		<Unit filename="src/Botao.h" />
+		<Unit filename="src/Camada.cpp" />
+		<Unit filename="src/Camada.h" />
 		<Unit filename="src/Checkbox.cpp" />
 		<Unit filename="src/Checkbox.h" />
 		<Unit filename="src/Vector2.h" />
