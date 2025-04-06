@@ -261,12 +261,7 @@ void keyboardUp(int key)
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-    //mouseX = x;
-    //mouseY = y;
-
     if (state == 0) { // Clique do mouse
-        if (cb->Colidiu(x, y)) cb->toggle();
-
         if (painelCamadas->btCima->Colidiu(x, y)) {
             painelCamadas->moverParaCima();
         }
@@ -279,8 +274,6 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
         int camadaSelecionada = (y - 20) / 50;
         painelCamadas->selecionar(camadaSelecionada);
     }
-
-
 }
 
 int main(void)
@@ -292,18 +285,27 @@ int main(void)
 
     auto img1 = std::make_shared<Bmp>(".\\trab1\\images\\a.bmp");
     img1->convertBGRtoRGB();
-    camadas.adiciona(img1);
+    img1->positionX = (screenWidth - img1->width) / 2;
+    img1->positionY = (screenHeight - img1->height) / 2;
 
     auto img2 = std::make_shared<Bmp>(".\\trab1\\images\\b.bmp");
     img2->convertBGRtoRGB();
-    camadas.adiciona(img2);
+    img2->positionX = (screenWidth - img2->width) / 2;
+    img2->positionY = (screenHeight - img2->height) / 2;
 
     auto img3 = std::make_shared<Bmp>(".\\trab1\\images\\c.bmp");
     img3->convertBGRtoRGB();
-    camadas.adiciona(img3);
+    img3->positionX = (screenWidth - img3->width) / 2;
+    img3->positionY = (screenHeight - img3->height) / 2;
 
     auto img4 = std::make_shared<Bmp>(".\\trab1\\images\\d.bmp");
     img4->convertBGRtoRGB();
+    img4->positionX = (screenWidth - img4->width) / 2;
+    img4->positionY = (screenHeight - img4->height) / 2;
+
+    camadas.adiciona(img1);
+    camadas.adiciona(img2);
+    camadas.adiciona(img3);
     camadas.adiciona(img4);
 
 	painelCamadas = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight);
