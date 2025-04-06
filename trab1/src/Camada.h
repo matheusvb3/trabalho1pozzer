@@ -11,5 +11,6 @@ public:
     void remove(const std::shared_ptr<Bmp>& img); // Remove uma imagem
     void moveParaCima(const std::shared_ptr<Bmp>& img); // Move uma camada para frente
     void moveParaBaixo(const std::shared_ptr<Bmp>& img); // Move uma camada para tras
+    std::shared_ptr<Bmp> getCamada(int indice);
     void render(); // Renderiza as camadas na ordem correta
 };
