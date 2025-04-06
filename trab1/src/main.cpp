@@ -44,7 +44,7 @@ int screenWidth = 1500, screenHeight = 700;
 
 inline void change(Bmp *teste)
 {
-	teste = new Bmp(".\\__LAB2\\images\\img3.bmp");
+	teste = new Bmp(".\\__LAB2\\images\\c.bmp");
 	teste->convertBGRtoRGB();
 	teste->data = teste->getImage();
 	teste->positionX = (screenWidth - teste->width) / 2;
@@ -203,7 +203,7 @@ void keyboard(int key)
 				ordem[q] = ordem[0];
 			}
 		ordem[0] = 1;
-		/* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
+		/* img1 = new Bmp(".\\__LAB2\\images\\a.bmp");
 		 img1->convertBGRtoRGB();
 		 data = img1->getImage();
 		 img1->positionX = (screenWidth - img1->width)/2;
@@ -218,7 +218,7 @@ void keyboard(int key)
 		ordem[0] = 2;
 
 
-		/* img1 = new Bmp(".\\__LAB2\\images\\img1.bmp");
+		/* img1 = new Bmp(".\\__LAB2\\images\\a.bmp");
 		  img1->convertBGRtoRGB();
 		  data = img1->getImage();
 		  img1->positionX = (screenWidth - img1->width)/2;
@@ -233,7 +233,7 @@ void keyboard(int key)
 				ordem[q] = ordem[0];
 			}
 		ordem[0] = 3;
-		/* img1 = new Bmp(".\\__LAB2\\images\\img3.bmp");
+		/* img1 = new Bmp(".\\__LAB2\\images\\c.bmp");
 		  img1->convertBGRtoRGB();
 		  data = img1->getImage();
 		img1->positionX = (screenWidth - img1->width)/2;
@@ -280,22 +280,22 @@ int main(void)
 	cb = new CheckBox(1200, 500, 50);
 	cb->ativa = false;
 
-	img1 = new Bmp(".\\trab1\\images\\img1.bmp");
+	img1 = new Bmp(".\\trab1\\images\\a.bmp");
 	img1->convertBGRtoRGB();
 	img1->positionX = (screenWidth - 200 - img1->width) / 2; //Define a posicao inicial de img1
 	img1->positionY = (screenHeight - img1->height) / 2;
 
-	img2 = new Bmp(".\\trab1\\images\\img2.bmp");
+	img2 = new Bmp(".\\trab1\\images\\b.bmp");
 	img2->convertBGRtoRGB();
 	img2->positionX = (screenWidth - img2->width) / 2;
 	img2->positionY = (screenHeight - img2->height) / 2;
 
-	img3 = new Bmp(".\\trab1\\images\\img3.bmp");
+	img3 = new Bmp(".\\trab1\\images\\c.bmp");
 	img3->convertBGRtoRGB();
 	img3->positionX = (screenWidth - img3->width) / 2;
 	img3->positionY = (screenHeight - img3->height) / 2;
 
-	img4 = new Bmp(".\\trab1\\images\\img4.bmp");
+	img4 = new Bmp(".\\trab1\\images\\d.bmp");
 	img4->convertBGRtoRGB();
 	img4->positionX = (screenWidth - img4->width) / 2;
 	img4->positionY = (screenHeight - img4->height) / 2;
