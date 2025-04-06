@@ -1,0 +1,116 @@
+# depslib dependency file v1.0
+1742913317 source:d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1742913525 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1632060799 d:\ufsm\disciplinas\computacao grafica\demos\include\gl\glut.h
+	"freeglut_std.h"
+
+1632060797 d:\ufsm\disciplinas\computacao grafica\demos\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1632060794 d:\ufsm\disciplinas\computacao grafica\demos\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1589217858 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\vector2.h
+
+1742913558 source:d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"bmp.h"
+
+1589214882 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\bola.h
+	"gl_canvas2d.h"
+
+1193164156 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\relogio.h
+	"gl_canvas2d.h"
+
+1589214891 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\botao.h
+	"gl_canvas2d.h"
+
+1589218349 source:d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\relogio.cpp
+	"Relogio.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+
+1742913477 source:d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1742910185 d:\ufsm\disciplinas\computacao grafica\demos\__lab2\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+
+1743805480 source:c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\bmp.cpp
+	"Bmp.h"
+	<string.h>
+
+1743892434 c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\bmp.h
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+
+1743095136 c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1632060799 c:\users\franc\desktop\semestre\cg\__demos\demos\include\gl\glut.h
+	"freeglut_std.h"
+
+1632060797 c:\users\franc\desktop\semestre\cg\__demos\demos\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1632060794 c:\users\franc\desktop\semestre\cg\__demos\demos\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1743095135 c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\vector2.h
+
+1743095135 source:c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1743892246 source:c:\users\franc\desktop\semestre\cg\__demos\demos\__lab2\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"bmp.h"
+
