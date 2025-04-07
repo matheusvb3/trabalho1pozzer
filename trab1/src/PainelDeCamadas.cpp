@@ -68,7 +68,6 @@ void PainelDeCamadas::render()
     float yBase = 20;
     for (size_t i = 0; i < camadas.size(); i++)
     {
-        //if (!visibilidade[i]) continue;
 
         if (selecionada == i)
         {

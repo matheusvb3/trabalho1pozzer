@@ -310,6 +310,6 @@ int main(void)
     painelCamadas->adiciona(img3, "Camada 3");
     painelCamadas->adiciona(img4, "Camada 4");
 
-	CV::init(&screenWidth, &screenHeight, "Manipulador de imagem");
+	CV::init(&screenWidth, &screenHeight, "Manipulador de imagens - Matheus Venturini Bortoluzzi");
 	CV::run();
 }
