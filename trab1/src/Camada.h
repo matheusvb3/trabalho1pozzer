@@ -1,3 +1,6 @@
+#ifndef CAMADA_H
+#define CAMADA_H
+
 #include <list>
 #include <memory>
 #include "Bmp.h"
@@ -14,3 +17,5 @@ public:
     std::shared_ptr<Bmp> getCamada(int indice);
     void render(); // Renderiza as camadas na ordem correta
 };
+
+#endif // CAMADA_H

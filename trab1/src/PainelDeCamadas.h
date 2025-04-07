@@ -5,20 +5,22 @@
 #include <memory>
 #include "bmp.h"
 #include "Botao.h"
+#include "Camada.h"
 
 class PainelDeCamadas {
 private:
     std::vector<std::shared_ptr<Bmp>> camadas;
     int selecionada;  // Indice da camada selecionada
+    Camada* ptrCamadas;
 
 public:
     Botao *btCima;
     Botao *btBaixo;
-    PainelDeCamadas(float x, float y, float largura, float altura);
+    PainelDeCamadas(float x, float y, float largura, float altura, Camada* ptrCamadas);
 
     void adiciona(std::shared_ptr<Bmp> img);
-    void moverParaCima();
-    void moverParaBaixo();
+    void moveParaCima();
+    void moveParaBaixo();
     void render();
     void selecionar(int index);
     int obterSelecionado() { return selecionada; }

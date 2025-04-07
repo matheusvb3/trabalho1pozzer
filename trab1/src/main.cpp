@@ -258,11 +258,11 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
     if (state == 0) { // Clique do mouse
         if (painelCamadas->btCima->Colidiu(x, y)) {
-            painelCamadas->moverParaCima();
+            painelCamadas->moveParaCima();
         }
 
         if (painelCamadas->btBaixo->Colidiu(x, y)) {
-            painelCamadas->moverParaBaixo();
+            painelCamadas->moveParaBaixo();
         }
 
         // Detecta se clicou em alguma camada e a seleciona
@@ -298,7 +298,7 @@ int main(void)
     camadas.adiciona(img3);
     camadas.adiciona(img4);
 
-	painelCamadas = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight);
+	painelCamadas = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight, &camadas);
 
 	painelCamadas->adiciona(img1);
     painelCamadas->adiciona(img2);
