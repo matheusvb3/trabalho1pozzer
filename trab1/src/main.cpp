@@ -300,10 +300,10 @@ int main(void)
 
 	painelCamadas = new PainelDeCamadas(0, 0, largPainelUsuario, screenHeight, &camadas);
 
-	painelCamadas->adiciona(img1);
-    painelCamadas->adiciona(img2);
-    painelCamadas->adiciona(img3);
-    painelCamadas->adiciona(img4);
+    painelCamadas->adiciona(img1, "Camada 1");
+    painelCamadas->adiciona(img2, "Camada 2");
+    painelCamadas->adiciona(img3, "Camada 3");
+    painelCamadas->adiciona(img4, "Camada 4");
 
 	CV::init(&screenWidth, &screenHeight, "Manipulador de imagem");
 	CV::run();
