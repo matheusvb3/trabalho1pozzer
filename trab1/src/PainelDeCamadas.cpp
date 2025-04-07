@@ -4,8 +4,8 @@ PainelDeCamadas::PainelDeCamadas(float x, float y, float largura, float altura) 
     selecionada = 0;
 
     // Criando os botões de mover camada
-    btCima = new Botao(x + 20, y + altura - 50, 50, 30, "Cima");
-    btBaixo = new Botao(x + 80, y + altura - 50, 50, 30, "Baixo");
+    btCima = new Botao(x + 20, y + altura - 50, 58, 30, "Cima");
+    btBaixo = new Botao(x + 100, y + altura - 50, 66, 30, "Baixo");
 }
 
 void PainelDeCamadas::adiciona(std::shared_ptr<Bmp> img) {
