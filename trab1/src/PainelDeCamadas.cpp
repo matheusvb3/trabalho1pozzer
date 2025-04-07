@@ -17,11 +17,11 @@ void PainelDeCamadas::adiciona(std::shared_ptr<Bmp> img, const std::string& nome
 
 void PainelDeCamadas::moveParaCima()
 {
-    if (selecionada > 0)
+    if (selecionada < camadas.size() - 1)
     {
-        std::swap(camadas[selecionada], camadas[selecionada - 1]);
-        std::swap(labels[selecionada], labels[selecionada - 1]);
-        selecionada--;
+        std::swap(camadas[selecionada], camadas[selecionada + 1]);
+        std::swap(labels[selecionada], labels[selecionada + 1]);
+        selecionada++;
         if (ptrCamadas)
         {
             ptrCamadas->moveParaCima(ptrCamadas->getCamada(selecionada));
@@ -31,11 +31,11 @@ void PainelDeCamadas::moveParaCima()
 
 void PainelDeCamadas::moveParaBaixo()
 {
-    if (selecionada < camadas.size() - 1)
+    if (selecionada > 0)
     {
-        std::swap(camadas[selecionada], camadas[selecionada + 1]);
-        std::swap(labels[selecionada], labels[selecionada + 1]);
-        selecionada++;
+        std::swap(camadas[selecionada], camadas[selecionada - 1]);
+        std::swap(labels[selecionada], labels[selecionada - 1]);
+        selecionada--;
         if (ptrCamadas)
         {
             ptrCamadas->moveParaBaixo(ptrCamadas->getCamada(selecionada));
