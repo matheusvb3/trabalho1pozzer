@@ -265,6 +265,11 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
             painelCamadas->moveParaBaixo();
         }
 
+        if (painelCamadas->btVisibilidade->Colidiu(x, y))
+        {
+            painelCamadas->alternarVisibilidade();
+        }
+
         // Detecta se clicou em alguma camada e a seleciona
         int camadaSelecionada = (y - 20) / 50;
         painelCamadas->selecionar(camadaSelecionada);
