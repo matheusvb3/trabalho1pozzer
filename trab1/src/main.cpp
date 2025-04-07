@@ -20,8 +20,6 @@ int largPainelUsuario = 200;
 
 Camada camadas;
 
-Botao *bt;
-
 unsigned char *data = NULL;
 
 int a = 0;
@@ -96,9 +94,6 @@ void render()
 	{
 		CV::text(1250, 600, "teste");
 	}
-
-	bt->render();
-
 
 	camadas.render();
 
@@ -258,6 +253,9 @@ void keyboardUp(int key)
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
+    mouseX = x;
+    mouseY = y;
+
     if (state == 0) { // Clique do mouse
         if (painelCamadas->btCima->Colidiu(x, y)) {
             painelCamadas->moverParaCima();
@@ -275,8 +273,6 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 int main(void)
 {
-	bt = new Botao(1200, 650, 100, 50, "botao");
-
     auto img1 = std::make_shared<Bmp>(".\\trab1\\images\\a.bmp");
     img1->convertBGRtoRGB();
     img1->positionX = (screenWidth - img1->width) / 2;

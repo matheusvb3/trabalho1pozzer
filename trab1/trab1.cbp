@@ -39,6 +39,8 @@
 		<Unit filename="src/Camada.h" />
 		<Unit filename="src/Checkbox.cpp" />
 		<Unit filename="src/Checkbox.h" />
+		<Unit filename="src/PainelDeCamadas.cpp" />
+		<Unit filename="src/PainelDeCamadas.h" />
 		<Unit filename="src/Vector2.h" />
 		<Unit filename="src/gl_canvas2d.cpp" />
 		<Unit filename="src/gl_canvas2d.h" />
