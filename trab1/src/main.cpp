@@ -22,8 +22,6 @@ Camada camadas;
 
 Botao *bt;
 
-CheckBox *cb;
-
 unsigned char *data = NULL;
 
 int a = 0;
@@ -94,7 +92,6 @@ void render()
     }
     CV::translate(0, 0);
 
-	cb->render();
 	if(a == 1)
 	{
 		CV::text(1250, 600, "teste");
@@ -279,9 +276,6 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 int main(void)
 {
 	bt = new Botao(1200, 650, 100, 50, "botao");
-
-	cb = new CheckBox(1200, 500, 50);
-	cb->ativa = false;
 
     auto img1 = std::make_shared<Bmp>(".\\trab1\\images\\a.bmp");
     img1->convertBGRtoRGB();
