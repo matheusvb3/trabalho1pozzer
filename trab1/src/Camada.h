@@ -11,7 +11,6 @@ private:
 
 public:
     void adiciona(const std::shared_ptr<Bmp>& img); // Adiciona nova imagem ao topo
-    void remove(const std::shared_ptr<Bmp>& img); // Remove uma imagem
     void moveParaCima(const std::shared_ptr<Bmp>& img); // Move uma camada para frente
     void moveParaBaixo(const std::shared_ptr<Bmp>& img); // Move uma camada para tras
     std::shared_ptr<Bmp> getCamada(int indice);

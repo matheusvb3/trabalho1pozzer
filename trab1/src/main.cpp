@@ -1,3 +1,13 @@
+/* Manipulador de imagens
+ * Feito por Matheus Venturini Bortoluzzi
+ *
+ * O programa carrega 4 imagens BMP em 4 camadas. O painel a esquerda
+ * traz as camadas em ordens diferentes, e os botoes "cima" e "baixo"
+ * permitem alterar a ordem. Ha tambem um botao de alternar a visibilidade
+ * da camada atualmente selecionada, e quando a camada esta escondida o seu
+ * botao fica verde no painel, mas a funcionalidade nao esta funcionando corretamente.
+ */
+
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h> //callback da wheel do mouse.
 
@@ -41,40 +51,6 @@ inline void change(Bmp *teste)
 }
 
 
-
-void renderiza(Bmp *teste)
-{
-	teste->render();
-
-}
-
-void renderizaFlippedH(Bmp *teste)
-{
-	teste->renderFlippedH();
-
-}
-void renderizaFlippedV(Bmp *teste)
-{
-	teste->renderFlippedV();
-
-}
-void renderizaFlippedHV(Bmp *teste)
-{
-	teste->renderFlippedHV();
-
-}
-
-void movimenta(Bmp *teste, int d)
-{
-	if(d == 200)  teste->positionX -= 60;
-	if(d == 201)  teste->positionY += 60;
-	if(d == 203)  teste->positionY -= 60;
-	if(d == 202)  teste->positionX += 60;
-
-
-}
-
-
 void render()
 {
     CV::translate(largPainelUsuario, 0);
@@ -98,149 +74,11 @@ void render()
 	camadas.render();
 
 	painelCamadas->render();
-
-
-	//img1->render();
-	// if(exibition == 2)  img2 ->render();
-	//teste->render(posX, posY);
 }
 
 //funcao chamada toda vez que uma tecla for pressionada.
 void keyboard(int key)
 {
-
-	/*if(key == 200)
-		switch(ordem[0])
-		{
-		case 1:
-			movimenta(img1, 200);
-			break;
-		case 2:
-			movimenta(img2, 200);
-			break;
-		case 3:
-			movimenta(img3, 200);
-			break;
-		case 4:
-			movimenta(img4, 200);
-			break;
-		}
-
-	if(key == 201)
-
-		switch(ordem[0])
-		{
-		case 1:
-			movimenta(img1, 201);
-			break;
-		case 2:
-			movimenta(img2, 201);
-			break;
-		case 3:
-			movimenta(img3, 201);
-			break;
-		case 4:
-			movimenta(img4, 201);
-			break;
-		}
-
-	if(key == 203)
-		switch(ordem[0])
-		{
-		case 1:
-			movimenta(img1, 203);
-			break;
-		case 2:
-			movimenta(img2, 203);
-			break;
-		case 3:
-			movimenta(img3, 203);
-			break;
-		case 4:
-			movimenta(img4, 203);
-			break;
-		}
-	if(key == 202)
-		switch(ordem[0])
-		{
-		case 1:
-			movimenta(img1, 202);
-			break;
-		case 2:
-			movimenta(img2, 202);
-			break;
-		case 3:
-			movimenta(img3, 202);
-			break;
-		case 4:
-			movimenta(img4, 202);
-			break;
-		}*/
-
-
-
-	/*  if(key == 200)  img1->positionX -= 60;
-	  if(key == 201)  img1->positionY += 60;
-	  if(key == 203)  img1->positionY -= 60;
-	  if(key == 202)  img1->positionX += 60;*/
-
-	printf("%d ", key);
-
-
-
-	if(key == 49)
-	{
-		for(int q = 0; q < tam; q++) if(ordem[q] == 1)
-			{
-				ordem[q] = ordem[0];
-			}
-		ordem[0] = 1;
-		/* img1 = new Bmp(".\\__LAB2\\images\\a.bmp");
-		 img1->convertBGRtoRGB();
-		 data = img1->getImage();
-		 img1->positionX = (screenWidth - img1->width)/2;
-		  img1->positionY = (screenHeight - img1->height)/2; */
-	}
-	if(key == 50)
-	{
-		for(int q = 0; q < tam; q++) if(ordem[q] == 2)
-			{
-				ordem[q] = ordem[0];
-			}
-		ordem[0] = 2;
-
-
-		/* img1 = new Bmp(".\\__LAB2\\images\\a.bmp");
-		  img1->convertBGRtoRGB();
-		  data = img1->getImage();
-		  img1->positionX = (screenWidth - img1->width)/2;
-		  img1->positionY = (screenHeight - img1->height)/2;*/
-
-	}
-
-	if(key == 51)
-	{
-		for(int q = 0; q < tam; q++) if(ordem[q] == 3)
-			{
-				ordem[q] = ordem[0];
-			}
-		ordem[0] = 3;
-		/* img1 = new Bmp(".\\__LAB2\\images\\c.bmp");
-		  img1->convertBGRtoRGB();
-		  data = img1->getImage();
-		img1->positionX = (screenWidth - img1->width)/2;
-		  img1->positionY = (screenHeight - img1->height)/2;*/
-	}
-	if(key == 52)
-	{
-		for(int q = 0; q < tam; q++) if(ordem[q] == 4)
-			{
-				ordem[q] = ordem[0];
-			}
-		ordem[0] = 4;
-	}
-//	if(key == 32) img3->brilho += 0.1;
-
 
 }
 

@@ -7,12 +7,6 @@ void Camada::adiciona(const std::shared_ptr<Bmp>& img)
     layers.push_back(img);
 }
 
-// Remove a imagem da lista
-void Camada::remove(const std::shared_ptr<Bmp>& img)
-{
-    layers.remove(img);
-}
-
 void Camada::moveParaCima(const std::shared_ptr<Bmp>& img)
 {
     auto it = std::find(layers.begin(), layers.end(), img);
